@@ -1,1 +1,56 @@
-const hamburger=document.querySelector(".hamburger"),navLinks=document.querySelector(".nav-links");hamburger.addEventListener("click",()=>{navLinks.classList.toggle("active")});const links=document.querySelectorAll(".nav-links a");links.forEach(e=>{e.addEventListener("click",t=>{t.preventDefault();let s=e.getAttribute("href").substring(1),o=document.getElementById(s);o&&window.scrollTo({top:o.offsetTop-50,behavior:"smooth"}),navLinks.classList.remove("active")})});const backToTopButton=document.getElementById("backToTop");window.addEventListener("scroll",()=>{window.scrollY>300?backToTopButton.style.display="block":backToTopButton.style.display="none"}),backToTopButton.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"})});const subscribeForm=document.getElementById("subscribeForm"),subscribeMessage=document.getElementById("subscribeMessage");subscribeForm.addEventListener("submit",e=>{e.preventDefault();let t=document.getElementById("email").value;t?(subscribeMessage.textContent="Thank you for subscribing!",subscribeForm.reset()):subscribeMessage.textContent="Please enter a valid email."});
+function hamburg(){
+  const navbar = document.querySelector(".dropdown")
+  navbar.style.transform = "translateY(0px)"
+}
+
+function cancel(){
+  const navbar = document.querySelector(".dropdown")
+  navbar.style.transform = "translateY(-500px)"
+}
+
+// Typewriter Effect
+
+const texts = [
+  "DEVELOPER",
+  "DESIGNER",
+  "YOUTUBER"
+]
+
+let speed  =100;
+const textElements = document.querySelector(".typewriter-text");
+
+let textIndex = 0;
+let charcterIndex = 0;
+
+function typeWriter(){
+  if (charcterIndex < texts[textIndex].length){
+      textElements.innerHTML += texts[textIndex].charAt(charcterIndex);
+      charcterIndex++;
+      setTimeout(typeWriter, speed); 
+  }
+  else{
+      setTimeout(eraseText, 1000)
+  }
+}
+
+function eraseText(){
+  if(textElements.innerHTML.length > 0){
+      textElements.innerHTML = textElements.innerHTML.slice(0,-1);
+      setTimeout(eraseText, 50)
+  }
+  else{
+      textIndex = (textIndex + 1) % texts.length;
+      charcterIndex = 0;
+      setTimeout(typeWriter, 500)
+  }
+}
+
+window.onload = typeWriter
+
+document.getElementById('btn').addEventListener('click', function() {
+  // Redirect to another page
+  window.location.href = "https://youtube.com";
+});
+
+
+

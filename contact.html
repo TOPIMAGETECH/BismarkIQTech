@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="contactStyle.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+</head>
+<body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Bismark IQ Tech</div>
+            <ul class="nav-links">
+                <li><a href="index.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="#contact" class="active">Contact</a></li>
+            </ul>
+            <button id="themeToggle">🌙</button>
+        </nav>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <h1>Contact Me</h1>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Your Name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Your Email" required>
+
+            <label for="voice">Message (Voice Input Available):</label>
+            <textarea id="message" rows="5" maxlength="500" placeholder="Your Message"></textarea>
+            <small id="charCount">500 characters left</small>
+            <button type="button" id="voiceInput">🎙 Start Voice Input</button>
+
+            <label for="file">Attach File:</label>
+            <input type="file" id="file" accept=".pdf,.jpg,.png">
+
+            <button type="submit" id="submitButton">Send Message</button>
+        </form>
+
+        <!-- QR Code -->
+        <div id="qrCodeSection">
+            <h3>Scan My Contact Info:</h3>
+            <canvas id="qrCodeCanvas"></canvas>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="spinner" class="hidden"></div>
+
+        <!-- Confirmation Modal -->
+        <div id="modal" class="hidden">
+            <div class="modal-content">
+                <h2>Confirm Submission</h2>
+                <p>Are you sure you want to submit?</p>
+                <button id="confirmYes">Yes</button>
+                <button id="confirmNo">No</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbot -->
+    <div id="chatbot">
+        <button id="chatToggle">💬 Chat</button>
+        <div id="chatContent" class="hidden">
+            <p>Hi! How can I assist you today?</p>
+            <input type="text" id="chatInput" placeholder="Type your question...">
+            <button id="chatSend">Send</button>
+        </div>
+    </div>
+
+
+
+    <footer>
+    <div class="footer-container">
+        <!-- Contact Info -->
+        <div class="footer-section contact-info">
+            <h3>Contact Info</h3>
+            <p>Email: bismarkiqtech@example.com</p>
+            <p>Phone: +233 123 456 789</p>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="footer-section social-links">
+            <h3>Follow Me</h3>
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section quick-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Copyright -->
+    <div class="footer-bottom">
+        <p>&copy; 2024 Bismark IQ Tech. All Rights Reserved.</p>
+    </div>
+</footer>
+
+
+
+
+
+    <script src="contactScript.js"></script>
+</body>
+</html>
