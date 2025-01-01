@@ -47,10 +47,56 @@ function eraseText(){
 
 window.onload = typeWriter
 
-document.getElementById('btn').addEventListener('click', function() {
-  // Redirect to another page
-  window.location.href = "https://youtube.com";
+// document.getElementById('Btn').addEventListener('click', function() {
+//   // Redirect to another page
+//   window.location.href = "index.html";
+// });
+
+
+
+// underline code for the activeness
+// Get the current page's URL
+const currentLocation = window.location.pathname;
+
+// Select all menu links
+const menuLinks = document.querySelectorAll('links a');
+
+// Loop through each menu link
+menuLinks.forEach(link => {
+  // If the link's href matches the current URL, add 'active'
+  if (link.getAttribute('href') === currentLocation.split('/').pop()) {
+    link.classList.add('active'); // Add 'active' to the current link
+  }
 });
 
 
+// search bar code 
 
+// function performSearch(){
+//   const query =document.getElementById("search").value.toLowerCase(); 
+//   alert("Searching for: " + query);
+// }
+
+
+function performSearch() {
+
+    const searchQuery = document.getElementById("search").value.toLowerCase();
+    const paragraphs = document.querySelectorAll("body");
+  
+  
+
+  // Remove previous highlights
+  paragraphs.forEach(p => {
+    p.innerHTML = p.innerHTML.replace(/<sp an class="highlight">(.*?)<\/span>/g, "$1");
+  });
+
+  if (searchQuery) {
+    paragraphs.forEach(p => {
+      const text = p.textContent.toLowerCase();
+      if (text.includes(searchQuery)) {
+        const regex = new RegExp(searchQuery, "gi");
+        p.innerHTML = p.innerHTML.replace(regex, match => `<span class="highlight">${match}</span>`);
+      }
+    });
+  }
+}
