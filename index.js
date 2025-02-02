@@ -1,12 +1,34 @@
-function hamburg(){
-  const navbar = document.querySelector(".dropdown")
-  navbar.style.transform = "translateY(0px)"
-}
+document.addEventListener("DOMContentLoaded", () => {
+  // Select the hamburger icon, the cancel icon, and the dropdown menu
+  const hamburgIcon = document.querySelector('.hamburg');
+  const dropdownMenu = document.querySelector('.dropdown');
+  const cancelIcon = document.querySelector('.dropdown .cancel');
 
-function cancel(){
-  const navbar = document.querySelector(".dropdown")
-  navbar.style.transform = "translateY(-500px)"
-}
+  // If the hamburger icon exists, attach a click event to show the menu
+  if (hamburgIcon && dropdownMenu) {
+    hamburgIcon.addEventListener('click', () => {
+      dropdownMenu.style.display = 'block';
+    });
+  }
+
+  // If the cancel icon exists, attach a click event to hide the menu
+  if (cancelIcon && dropdownMenu) {
+    cancelIcon.addEventListener('click', () => {
+      dropdownMenu.style.display = 'none';
+    });
+  }
+
+  // Optional: Hide the dropdown if clicking outside the menu area
+  document.addEventListener('click', (e) => {
+    if (
+      dropdownMenu.style.display === 'block' &&
+      !dropdownMenu.contains(e.target) &&
+      !hamburgIcon.contains(e.target)
+    ) {
+      dropdownMenu.style.display = 'none';
+    }
+  });
+});
 
 // Typewriter Effect
 
