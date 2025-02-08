@@ -6,47 +6,46 @@
 }
 body {
   font-family: "Orbitron", sans-serif;
-  background: #0d0d0d;
+  background: linear-gradient(135deg, #1c1c1c, #0d0d0d);
   color: #e0e0e0;
   line-height: 1.6;
 }
 
 /* Navigation Back Button */
-/* Updated Navigation Back Button */
 .back {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   height: 60px;
-  background: #111;
-  border-bottom: 2px solid #00f5ff;
+  background: rgba(20, 20, 20, 0.8);
+  backdrop-filter: blur(5px);
+  border-bottom: 2px solid #03dac6;
   padding-left: 20px;
 }
 
-/* Updated Navbar Icon */
+/* Navbar Icon */
 .navbar-icon {
-  color: #00f5ff;
+  color: #03dac6;
   font-size: 2rem;
   cursor: pointer;
   transition: transform 0.3s ease, color 0.3s ease;
 }
-
 .navbar-icon:hover {
   transform: scale(1.1);
-  color: #ff00c8;
+  color: #ff0266;
 }
 
 /* Services Section */
 .services {
-  padding: 40px 20px;
-  background: #0d0d0d;
+  padding: 50px 20px;
+  background: #121212;
   text-align: center;
 }
 .services h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #ff00c8;
-  text-shadow: 0 0 10px #ff00c8;
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+  color: #ff0266;
+  /* Removed text-shadow for a cleaner modern look */
 }
 
 /* Filter Buttons Container (Centered Row) */
@@ -54,61 +53,99 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 30px;
+  gap: 12px;
+  margin-bottom: 40px;
 }
 .filter-btn {
-  padding: 10px 20px;
+  padding: 12px 24px;
   border: none;
-  background: #00f5ff;
-  color: #0d0d0d;
-  border-radius: 5px;
+  background: #03dac6;
+  color: #121212;
+  border-radius: 30px;
   cursor: pointer;
   font-size: 1rem;
+  font-weight: bold;
   transition: background 0.3s ease, transform 0.3s ease;
 }
 .filter-btn:hover {
-  background: #ff00c8;
+  background: #ff0266;
   transform: scale(1.05);
 }
 
 /* Services Grid Layout */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
   padding: 20px;
 }
+
+/* Background Image Overrides for Specific IDs */
+#General-IT {
+  background-image: url("media/General IT Consultation.jpg");
+  background-size: cover;
+  background-position: center;
+}
+#Tech-Content {
+  background-image: url("media/content creator.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+#Graphic {
+  background-image: url("media/design.jpg");
+  background-size: cover;
+  background-position: center;
+ 
+}
+
+#Graphic p{
+  color: black;
+  font-weight: bold;
+ 
+}
+#Computers {
+  background-image: url("media/Computers Sales.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+#Advertisement {
+  background-image: url("media/Advertisement.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Service Item */
 .service-item {
   position: relative;
-  background: rgba(10, 10, 10, 0.8);
-  padding: 20px;
-  border: 1px solid rgba(0, 245, 255, 0.3);
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 245, 255, 0.2);
+  padding: 25px;
+  border: 1px solid rgba(3, 218, 198, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(3, 218, 198, 0.2);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-image: url("media/programming.jpg");
+  /* Combine a dark overlay with the background image for improved readability */
+  background: linear-gradient(rgba(18, 18, 18, 0.85), rgba(18, 18, 18, 0.85)), url("media/programming.jpg");
   background-size: cover;
   background-position: center;
 }
 .service-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 4px 20px rgba(0, 245, 255, 0.4);
+  transform: translateY(-10px);
+  box-shadow: 0 6px 24px rgba(3, 218, 198, 0.4);
 }
 .service-item h2 {
-  color: #fdfdfd;
-  margin-bottom: 10px;
-  text-shadow: 0 0 5px #00f5ff;
+  font-size: 1.8rem;
+  color: #ff0266;
+  margin-bottom: 12px;
+  text-shadow: 0 0 5px #000000;
 }
 .service-item p {
-  color: #fff;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  color: #ffffff;
 }
 
 /* Footer Styles */
 .footer {
-  background: #000;
+  background: #0d0d0d;
   color: #e0e0e0;
   padding: 40px 20px;
 }
@@ -121,7 +158,7 @@ body {
 }
 .footer-about h3 {
   font-size: 2rem;
-  color: #007bff;
+  color: #03dac6;
 }
 .footer-links ul {
   list-style: none;
@@ -136,7 +173,7 @@ body {
   transition: color 0.3s ease;
 }
 .footer-links a:hover {
-  color: #007bff;
+  color: #03dac6;
 }
 .footer-social a {
   color: #e0e0e0;
@@ -146,10 +183,10 @@ body {
   transition: color 0.3s ease;
 }
 .footer-social a:hover {
-  color: #ff00c8;
+  color: #ff0266;
 }
 .footer-bottom {
-  background: #222;
+  background: #1e1e1e;
   text-align: center;
   padding: 15px 0;
   color: #bbb;
@@ -161,19 +198,19 @@ body {
   bottom: 20px;
   right: 20px;
   display: none;
-  background: #0056b3;
-  color: white;
+  background: #03dac6;
+  color: #121212;
   border: none;
   border-radius: 50%;
   width: 50px;
   height: 50px;
   font-size: 20px;
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: background 0.3s ease;
 }
 #scrollTopBtn:hover {
-  background: #00aaff;
+  background: #ff0266;
 }
 
 /* Responsive Adjustments */
