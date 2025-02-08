@@ -1,110 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | Bismark IQ Tech</title>
-    <link rel="stylesheet" href="Services.css">
-    <link rel="shortcut icon" href="media/main2.jpg" type="image/x-icon">
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1183124778286463"
-     crossorigin="anonymous"></script>
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Bismark IQ Tech</title>
+  <link rel="stylesheet" href="Services.css" />
+  <link rel="shortcut icon" href="media/main2.jpg" type="image/x-icon" />
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- Import the Orbitron font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
 </head>
-
 <body>
+  <!-- Navigation Back Button -->
+  <nav class="back">
+    <a href="index.html">
+      <ion-icon class="navbar-icon" size="large" name="caret-back-outline"></ion-icon>
+    </a>
+  </nav>
 
-    <nav class="back">
+  <!-- Services Section -->
+  <section class="services">
+    <h1>OUR FULL RANGE OF IT SERVICES</h1>
+    
+    <!-- Filter Buttons (Centered in a Row) -->
+    <div class="filter-buttons-container">
+      <button class="filter-btn" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="software">Software Development</button>
+      <button class="filter-btn" data-filter="it">IT Consultation</button>
+      <button class="filter-btn" data-filter="cybersecurity">Tech Content Creator</button>
+      <button class="filter-btn" data-filter="cloud">Graphic Design</button>
+      <button class="filter-btn" data-filter="sales">Computers Sales</button>
+      <button class="filter-btn" data-filter="rentals">Advertisement</button>
+    </div>
 
-        <a href="index.html">
-            <ion-icon class="navbar-icon" size="large" name="caret-back-outline"></ion-icon>
+    <!-- Services Grid -->
+    <div class="services-grid">
+      <div class="service-item" data-category="software">
+        <h2>Software Development</h2>
+        <p>Mobile App Development, Web Development</p>
+      </div>
+      <div id="General-IT" class="service-item" data-category="it">
+        <h2>General IT Consultation</h2>
+        <p>Strategic Planning, IT Support and Troubleshooting, Training and Development</p>
+      </div>
+      <div id="Tech-Content" class="service-item" data-category="cybersecurity">
+        <h2>Tech Content Creator</h2>
+        <p>Blog Articles, YouTube, Podcast</p>
+      </div>
+      <div id="Graphic" class="service-item" data-category="cloud">
+        <h2>Graphic Design</h2>
+        <p>Banners, Flyers, Picture Retouch</p>
+      </div>
+      <div id="Computers" class="service-item" data-category="sales">
+        <h2>Computers Sales</h2>
+        <p>Laptops, Desktops, Accessories</p>
+      </div>
+      <div id="Advertisement" class="service-item" data-category="rentals">
+        <h2>Advertisement</h2>
+        <p>Digital Ads, Advertising Strategies</p>
+      </div>
+    </div>
+  </section>
 
-        </a>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>Bismarck IQ Tech</h3>
+        <p>Your go-to problem solver, developer, and tech content creator.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="project.html">See My Work</a></li>
+          <li><a href="contact.html">Contact Me</a></li>
+          <li><a href="Services.html">Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Connect with Me</h4>
+        <a id="facebook-icon" href="https://www.facebook.com/BismarkIQTech?mibextid=ZbWKwL" target="_blank">Facebook</a> |
+        <a id="INSTAGRAM-icon" href="https://www.twitter.com" target="_blank">Instagram</a> |
+        <a id="Youtube-icon" href="https://www.youtube.com/@bismarkIQTech" target="_blank">YouTube</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Bismarck IQ Tech. All Rights Reserved.</p>
+    </div>
+  </footer>
 
-    </nav>
+  <!-- Scroll-to-Top Button -->
+  <button id="scrollTopBtn">↑</button>
 
-
-    <!-- Services Section -->
-    <section class="services">
-
-        <h1>OUR FULL RANGE OF IT SERVICES</h1>
-        <div id="filter-buttons">
-            <button class="filter-btn" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="software">Software Development</button>
-            <button class="filter-btn" data-filter="it">IT Consultation</button>
-            <button class="filter-btn" data-filter="cybersecurity">Tech Content Creator</button>
-            <button class="filter-btn" data-filter="cloud">Graphic Design</button>
-            <button class="filter-btn" data-filter="sales">Computers Sales</button>
-            <button class="filter-btn" data-filter="rentals">Advertisement</button>
-        </div>
-        <div class="services-grid">
-            <div class="service-item" data-category="software">
-                <h2>Software Development</h2>
-                <p>Mobile App Development, Web Development</p>
-                
-            </div>
-            <div class="service-item" data-category="it">
-                <h2>General IT Consultation</h2>
-                <p>Strategic Planning, IT Support and Troublesshooting, Training and Development</p>
-            </div>
-            <div class="service-item" data-category="cybersecurity">
-                <h2>Tech Content Creator</h2>
-                <p>Blog Articles, Youtuber, Podcast</p>
-            </div>
-            <div class="service-item" data-category="cloud">
-                <h2>Graphic Design</h2>
-                <p>Banners, Flyers, Picture Retouch</p>
-            </div>
-            <div class="service-item" data-category="sales">
-                <h2>Computers Sales</h2>
-                <p>Laptops, Desktops, Accessories</p>
-            </div>
-            <div class="service-item" data-category="rentals">
-                <h2>Advertisement</h2>
-                <p>Digital Ads, Advertising Strategies</p>
-            </div>
-        </div>
-    </section>
-
-
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-about">
-                <h3>Bismarck IQ Tech</h3>
-                <p>Your go-to problem solver, developer, and tech content creator.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="project.html">See My Work</a></li>
-                    <li><a href="contact.html">Contact Me</a></li>
-                    <li><a href="Services.html">Services</a></li>
-                </ul>
-            </div>
-            <div class="footer-social">
-                <h4>Connect with Me</h4>
-                <a id="facebook-icon" href="https://www.facebook.com/BismarkIQTech?mibextid=ZbWKwL" target="_blank">Facebook</a> |
-                <a id="INSTAGRAM-icon" href="https://www.twitter.com" target="_blank">Instagram</a> |
-                <a id="Youtube-icon" href="https://www.youtube.com/@bismarkIQTech" target="_blank">YouTube</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Bismarck IQ Tech. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-
-
-
-    <!-- Scroll to Top Button -->
-    <button id="scrollTopBtn">↑</button>
-
-    <script src="Services.js"></script>
+  <script src="Services.js"></script>
 </body>
-
 </html>
