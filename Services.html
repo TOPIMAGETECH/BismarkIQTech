@@ -4,97 +4,441 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services | Bismark IQ Tech</title>
-  <link rel="stylesheet" href="Services.css" />
   <link rel="shortcut icon" href="media/main2.jpg" type="image/x-icon" />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3B82F6',
+            secondary: '#10B981',
+            dark: '#1F2937',
+            light: '#F9FAFB',
+            accent: '#6366F1',
+          },
+          fontFamily: {
+            orbitron: ['Orbitron', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          animation: {
+            'gradient-x': 'gradient-x 8s ease infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            'gradient-x': {
+              '0%, 100%': { 'background-position': '0% 50%' },
+              '50%': { 'background-position': '100% 50%' },
+            },
+            'float': {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Ion Icons -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <!-- Import the Orbitron font -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .text-gradient {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+      }
+      .card-hover {
+        @apply transition-all duration-300 hover:scale-105 hover:shadow-xl;
+      }
+      .service-icon {
+        @apply text-4xl mb-4 text-gradient;
+      }
+    }
+  </style>
 </head>
-<body>
+<body class="bg-gray-50 font-sans text-gray-800 min-h-screen flex flex-col">
   <!-- Navigation Back Button -->
-  <nav class="back">
-    <a href="index.html">
-      <ion-icon class="navbar-icon" size="large" name="caret-back-outline"></ion-icon>
+  <nav class="fixed top-4 left-4 z-50">
+    <a href="index.html" class="bg-white/80 backdrop-blur-sm p-2 rounded-full shadow-lg hover:bg-white transition-all duration-300 group">
+      <ion-icon class="text-gray-700 group-hover:text-primary text-2xl" name="caret-back-outline"></ion-icon>
     </a>
   </nav>
 
-  <!-- Services Section -->
-  <section class="services">
-    <h1>OUR FULL RANGE OF IT SERVICES</h1>
-    
-    <!-- Filter Buttons (Centered in a Row) -->
-    <div class="filter-buttons-container">
-      <button class="filter-btn" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="software">Software Development</button>
-      <button class="filter-btn" data-filter="it">IT Consultation</button>
-      <button class="filter-btn" data-filter="cybersecurity">Tech Content Creator</button>
-      <button class="filter-btn" data-filter="cloud">Graphic Design</button>
-      <button class="filter-btn" data-filter="sales">Computers Sales</button>
-      <button class="filter-btn" data-filter="rentals">Advertisement</button>
-    </div>
+  <!-- Animated Background Decoration -->
+  <div class="fixed inset-0 -z-10 overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-50/30 to-green-50/30"></div>
+    <div class="absolute top-20 right-20 w-64 h-64 rounded-full bg-primary/10 blur-3xl animate-float"></div>
+    <div class="absolute bottom-10 left-10 w-80 h-80 rounded-full bg-accent/10 blur-3xl animate-float animation-delay-2000"></div>
+  </div>
 
-    <!-- Services Grid -->
-    <div class="services-grid">
-      <div class="service-item" data-category="software">
-        <h2>Software Development</h2>
-        <p>Mobile App Development, Web Development</p>
+  <!-- Services Section -->
+  <main class="flex-grow container mx-auto px-4 py-20 md:py-28">
+    <section class="max-w-7xl mx-auto">
+      <!-- Animated Header -->
+      <div class="text-center mb-16" data-aos="fade-up">
+        <span class="inline-block px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">Our Services</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          <span class="text-gradient font-orbitron">Full Range</span> of IT Solutions
+        </h1>
+        <p class="max-w-2xl mx-auto text-lg text-gray-600">
+          Cutting-edge technology services tailored to your business needs. We deliver excellence in every solution.
+        </p>
       </div>
-      <div id="General-IT" class="service-item" data-category="it">
-        <h2>General IT Consultation</h2>
-        <p>Strategic Planning, IT Support and Troubleshooting, Training and Development</p>
+      
+      <!-- Interactive Filter Buttons -->
+      <div class="flex flex-wrap justify-center gap-3 mb-16" data-aos="fade-up" data-aos-delay="100">
+        <button class="filter-btn px-4 py-2 rounded-full border border-gray-200 bg-white shadow-sm hover:bg-primary hover:text-white transition-all duration-300 font-medium text-sm active:scale-95" data-filter="all">
+          All Services
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-full border border-gray-200 bg-white shadow-sm hover:bg-primary hover:text-white transition-all duration-300 font-medium text-sm active:scale-95" data-filter="software">
+          <i class="fas fa-code mr-2"></i> Software
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-full border border-gray-200 bg-white shadow-sm hover:bg-primary hover:text-white transition-all duration-300 font-medium text-sm active:scale-95" data-filter="it">
+          <i class="fas fa-headset mr-2"></i> IT Consultation
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-full border border-gray-200 bg-white shadow-sm hover:bg-primary hover:text-white transition-all duration-300 font-medium text-sm active:scale-95" data-filter="cybersecurity">
+          <i class="fas fa-video mr-2"></i> Content Creation
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-full border border-gray-200 bg-white shadow-sm hover:bg-primary hover:text-white transition-all duration-300 font-medium text-sm active:scale-95" data-filter="cloud">
+          <i class="fas fa-paint-brush mr-2"></i> Graphic Design
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-full border border-gray-200 bg-white shadow-sm hover:bg-primary hover:text-white transition-all duration-300 font-medium text-sm active:scale-95" data-filter="sales">
+          <i class="fas fa-laptop mr-2"></i> Computer Sales
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-full border border-gray-200 bg-white shadow-sm hover:bg-primary hover:text-white transition-all duration-300 font-medium text-sm active:scale-95" data-filter="rentals">
+          <i class="fas fa-bullhorn mr-2"></i> Advertisement
+        </button>
       </div>
-      <div id="Tech-Content" class="service-item" data-category="cybersecurity">
-        <h2>Tech Content Creator</h2>
-        <p>Blog Articles, YouTube, Podcast</p>
+
+      <!-- Services Grid with Hover Effects -->
+      <div class="services-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="200">
+        <!-- Software Development -->
+        <div class="service-item bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 card-hover" data-category="software">
+          <div class="p-6">
+            <div class="service-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h2 class="text-xl font-bold mb-3">Software Development</h2>
+            <p class="text-gray-600 mb-4">Custom solutions tailored to your business requirements.</p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-primary mr-2"></i> Mobile App Development
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-primary mr-2"></i> Web Development
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-primary mr-2"></i> Custom Software Solutions
+              </li>
+            </ul>
+          </div>
+          <div class="px-6 py-4 bg-gray-50 border-t border-gray-100">
+            <button class="text-primary font-medium text-sm hover:text-primary/80 transition-colors flex items-center">
+              Learn more <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- IT Consultation -->
+        <div class="service-item bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 card-hover" data-category="it">
+          <div class="p-6">
+            <div class="service-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h2 class="text-xl font-bold mb-3">IT Consultation</h2>
+            <p class="text-gray-600 mb-4">Expert guidance for your technology infrastructure.</p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-primary mr-2"></i> Strategic Planning
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-primary mr-2"></i> IT Support & Troubleshooting
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-primary mr-2"></i> Training & Development
+              </li>
+            </ul>
+          </div>
+          <div class="px-6 py-4 bg-gray-50 border-t border-gray-100">
+            <button class="text-primary font-medium text-sm hover:text-primary/80 transition-colors flex items-center">
+              Learn more <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Tech Content Creator -->
+        <div class="service-item bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 card-hover" data-category="cybersecurity">
+          <div class="p-6">
+            <div class="service-icon">
+              <i class="fas fa-video"></i>
+            </div>
+            <h2 class="text-xl font-bold mb-3">Tech Content Creation</h2>
+            <p class="text-gray-600 mb-4">Engaging tech content to educate and inspire.</p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-primary mr-2"></i> Blog Articles
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-primary mr-2"></i> YouTube Videos
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-primary mr-2"></i> Podcasts
+              </li>
+            </ul>
+          </div>
+          <div class="px-6 py-4 bg-gray-50 border-t border-gray-100">
+            <button class="text-primary font-medium text-sm hover:text-primary/80 transition-colors flex items-center">
+              Learn more <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Graphic Design -->
+        <div class="service-item bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 card-hover" data-category="cloud">
+          <div class="p-6">
+            <div class="service-icon">
+              <i class="fas fa-paint-brush"></i>
+            </div>
+            <h2 class="text-xl font-bold mb-3">Graphic Design</h2>
+            <p class="text-gray-600 mb-4">Visually stunning designs for your brand.</p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-primary mr-2"></i> Banners & Flyers
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-primary mr-2"></i> Picture Retouching
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-primary mr-2"></i> Brand Identity
+              </li>
+            </ul>
+          </div>
+          <div class="px-6 py-4 bg-gray-50 border-t border-gray-100">
+            <button class="text-primary font-medium text-sm hover:text-primary/80 transition-colors flex items-center">
+              Learn more <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Computer Sales -->
+        <div class="service-item bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 card-hover" data-category="sales">
+          <div class="p-6">
+            <div class="service-icon">
+              <i class="fas fa-laptop"></i>
+            </div>
+            <h2 class="text-xl font-bold mb-3">Computer Sales</h2>
+            <p class="text-gray-600 mb-4">Quality hardware for your computing needs.</p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-primary mr-2"></i> Laptops & Desktops
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-primary mr-2"></i> Computer Accessories
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-primary mr-2"></i> Custom Builds
+              </li>
+            </ul>
+          </div>
+          <div class="px-6 py-4 bg-gray-50 border-t border-gray-100">
+            <button class="text-primary font-medium text-sm hover:text-primary/80 transition-colors flex items-center">
+              Learn more <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Advertisement -->
+        <div class="service-item bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 card-hover" data-category="rentals">
+          <div class="p-6">
+            <div class="service-icon">
+              <i class="fas fa-bullhorn"></i>
+            </div>
+            <h2 class="text-xl font-bold mb-3">Advertisement</h2>
+            <p class="text-gray-600 mb-4">Effective strategies to grow your audience.</p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-primary mr-2"></i> Digital Advertising
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-primary mr-2"></i> Marketing Strategies
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check-circle text-primary mr-2"></i> Social Media Campaigns
+              </li>
+            </ul>
+          </div>
+          <div class="px-6 py-4 bg-gray-50 border-t border-gray-100">
+            <button class="text-primary font-medium text-sm hover:text-primary/80 transition-colors flex items-center">
+              Learn more <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+          </div>
+        </div>
       </div>
-      <div id="Graphic" class="service-item" data-category="cloud">
-        <h2>Graphic Design</h2>
-        <p>Banners, Flyers, Picture Retouch</p>
+
+      <!-- CTA Section -->
+      <div class="mt-20 text-center" data-aos="fade-up">
+        <div class="bg-gradient-to-r from-primary to-accent p-0.5 rounded-xl inline-block">
+          <div class="bg-white rounded-lg px-8 py-6 sm:px-12 sm:py-10">
+            <h3 class="text-2xl md:text-3xl font-bold mb-4">Ready to Transform Your Business?</h3>
+            <p class="text-gray-600 mb-6 max-w-2xl mx-auto">Let's discuss how we can help you achieve your technology goals with our expert services.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+              <a href="contact.html" class="px-6 py-3 bg-gradient-to-r from-primary to-accent text-white rounded-lg font-medium hover:opacity-90 transition-opacity shadow-lg hover:shadow-xl">
+                Get in Touch
+              </a>
+              <a href="project.html" class="px-6 py-3 bg-white border border-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-50 transition-colors shadow-sm">
+                View Our Work
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div id="Computers" class="service-item" data-category="sales">
-        <h2>Computers Sales</h2>
-        <p>Laptops, Desktops, Accessories</p>
-      </div>
-      <div id="Advertisement" class="service-item" data-category="rentals">
-        <h2>Advertisement</h2>
-        <p>Digital Ads, Advertising Strategies</p>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-about">
-        <h3>Bismarck IQ Tech</h3>
-        <p>Your go-to problem solver, developer, and tech content creator.</p>
+  <footer class="bg-dark text-white pt-16 pb-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10">
+        <div class="md:col-span-2">
+          <h3 class="text-2xl font-bold mb-4 font-orbitron">Bismarck IQ Tech</h3>
+          <p class="text-gray-300 mb-6">Your trusted partner for innovative technology solutions that drive business growth and digital transformation.</p>
+          <div class="flex space-x-4">
+            <a href="https://www.facebook.com/BismarkIQTech?mibextid=ZbWKwL" target="_blank" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary transition-colors">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-pink-600 transition-colors">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@bismarkIQTech" target="_blank" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-red-600 transition-colors">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-blue-400 transition-colors">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-3">
+            <li><a href="project.html" class="text-gray-300 hover:text-white transition-colors">See My Work</a></li>
+            <li><a href="contact.html" class="text-gray-300 hover:text-white transition-colors">Contact Me</a></li>
+            <li><a href="Services.html" class="text-gray-300 hover:text-white transition-colors">Services</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Blog</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Services</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Software Development</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white transition-colors">IT Consultation</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Tech Content</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Graphic Design</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="project.html">See My Work</a></li>
-          <li><a href="contact.html">Contact Me</a></li>
-          <li><a href="Services.html">Services</a></li>
-        </ul>
+      
+      <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2024 Bismarck IQ Tech. All Rights Reserved.</p>
+        <div class="flex space-x-6">
+          <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+          <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+          <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Cookies</a>
+        </div>
       </div>
-      <div class="footer-social">
-        <h4>Connect with Me</h4>
-        <a id="facebook-icon" href="https://www.facebook.com/BismarkIQTech?mibextid=ZbWKwL" target="_blank">Facebook</a> |
-        <a id="INSTAGRAM-icon" href="https://www.twitter.com" target="_blank">Instagram</a> |
-        <a id="Youtube-icon" href="https://www.youtube.com/@bismarkIQTech" target="_blank">YouTube</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 Bismarck IQ Tech. All Rights Reserved.</p>
     </div>
   </footer>
 
   <!-- Scroll-to-Top Button -->
-  <button id="scrollTopBtn">↑</button>
+  <button id="scrollTopBtn" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full shadow-lg hover:bg-primary/90 transition-all opacity-0 invisible flex items-center justify-center">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
-  <script src="Services.js"></script>
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <script>
+    // Initialize AOS animation library
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+      offset: 100
+    });
+
+    // Scroll to top button
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        scrollTopBtn.classList.remove('opacity-0', 'invisible');
+        scrollTopBtn.classList.add('opacity-100', 'visible');
+      } else {
+        scrollTopBtn.classList.remove('opacity-100', 'visible');
+        scrollTopBtn.classList.add('opacity-0', 'invisible');
+      }
+    });
+    
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Filter functionality for services
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const serviceItems = document.querySelectorAll('.service-item');
+    
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Update active state on buttons
+        filterButtons.forEach(btn => btn.classList.remove('bg-primary', 'text-white'));
+        button.classList.add('bg-primary', 'text-white');
+        
+        const filterValue = button.getAttribute('data-filter');
+        
+        serviceItems.forEach(item => {
+          if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+            item.classList.remove('hidden');
+            item.classList.add('block');
+          } else {
+            item.classList.remove('block');
+            item.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // Add hover effect to service cards
+    serviceItems.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        item.style.transform = 'translateY(-5px)';
+      });
+      
+      item.addEventListener('mouseleave', () => {
+        item.style.transform = '';
+      });
+    });                  
+
+    // Professional console message
+    console.log('%c🔧 Built with expertise by Bismarck IQ Tech', 'color: #3B82F6; font-size: 14px; font-weight: bold;');
+    console.log('%cLooking for a professional developer? Let\'s connect!', 'color: #10B981; font-size: 12px;');
+  </script>
 </body>
 </html>
