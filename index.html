@@ -3,79 +3,127 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="author" content="Bismark Technology" />
-  <meta name="keywords" content="bismarkiq , bismark,bismarkIQTech, tech, graphic designing, IT, innovative solutions , technology, gadgets, AI, smartphones, latest tech news,Bismarckia
- />
+  <meta name="keywords" content="bismarkiq , bismark,bismarkIQTech, tech, graphic designing, IT, innovative solutions , technology, gadgets, AI, smartphones, latest tech news,Bismarckia" />
   <meta name="description" content="Bismark IQ Tech provides cutting-edge web development, IT solutions, and digital security services. Elevate your business with smart technology today!">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-adsense-account" content="ca-pub-1183124778286463">
   
-  <!-- External CSS Libraries -->
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#3B82F6',
+              dark: '#2563EB',
+              light: '#93C5FD'
+            },
+            secondary: {
+              DEFAULT: '#10B981',
+              dark: '#059669',
+              light: '#6EE7B7'
+            },
+            accent: '#F59E0B'
+          },
+          fontFamily: {
+            orbitron: ['Orbitron', 'sans-serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif']
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- External Libraries -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Favicon -->
   <link rel="shortcut icon" href="media/bismark icons/favicon.ico" type="image/x-icon">
   <link rel="icon" href="https://www.bismarkiq.online/favicon.ico" type="image/x-icon">
   <meta name="robots" content="index, follow">
 
-  
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="styles.css" />
-  
-  <!-- Ionicons for Icons -->
+  <!-- Ionicons -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   
- <title>Bismark IQ Tech – Smart IT Solutions & Web Development</title>
+  <title>Bismark IQ Tech – Smart IT Solutions & Web Development</title>
 
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Tech",
-  "name": "Bismark IQ Tech",
-  "url": "https://www.bismarkiq.online",
-  "address": {
-    "@type": "PostalAddress",
-    "BT-0000-4567": "Ahenfi NUM 2",
-    "addressLocality": "Techiman",
-    "addressCountry": "Ghana"
-  }
-}
-</script>
-
+    {
+      "@context": "https://schema.org",
+      "@type": "Tech",
+      "name": "Bismark IQ Tech",
+      "url": "https://www.bismarkiq.online",
+      "address": {
+        "@type": "PostalAddress",
+        "BT-0000-4567": "Ahenfi NUM 2",
+        "addressLocality": "Techiman",
+        "addressCountry": "Ghana"
+      }
+    }
+  </script>
 </head>
-<body>
+<body class="font-sans bg-gray-50 text-gray-800">
   <!-- Sticky Header -->
-  <header class="site-header">
-    <nav class="nav-container">
+  <header class="sticky top-0 z-50 bg-white shadow-md transition-all duration-300">
+    <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
       <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
-        <a href="index.html">Bismark <span>IQ Tech</span></a>
+        <a href="index.html" class="text-2xl font-bold text-primary-dark hover:text-primary">
+          <span class="font-orbitron">Bismark</span> <span class="text-accent">IQ Tech</span>
+        </a>
       </div>
-      <div class="links">
-        <a href="#" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">Home</a>
-        <a href="Services.html" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">Services</a>
-        <a href="project.html" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">Systems</a>
-        <a href="skills.html" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400">About Us</a>
-        <a href="contact.html" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">Contact</a>
+      
+      <div class="hidden md:flex space-x-8">
+        <a href="#" class="nav-link font-medium text-gray-700 hover:text-primary transition-colors duration-300" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">Home</a>
+        <a href="Services.html" class="nav-link font-medium text-gray-700 hover:text-primary transition-colors duration-300" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">Services</a>
+        <a href="project.html" class="nav-link font-medium text-gray-700 hover:text-primary transition-colors duration-300" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">Systems</a>
+        <a href="skills.html" class="nav-link font-medium text-gray-700 hover:text-primary transition-colors duration-300" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400">About Us</a>
+        <a href="contact.html" class="nav-link font-medium text-gray-700 hover:text-primary transition-colors duration-300" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">Contact</a>
       </div>
-      <i class="fa-solid fa-bars hamburg" onclick="toggleDropdown()"></i>
+      
+      <button class="md:hidden text-gray-700 focus:outline-none" onclick="toggleDropdown()">
+        <i class="fa-solid fa-bars text-2xl"></i>
+      </button>
     </nav>
+    
     <!-- Mobile Dropdown Menu -->
-    <div class="dropdown" id="mobileDropdown">
-      <div class="dropdown-links">
-        <a href="#"><ion-icon class="navbar-icon" size="small" name="home"></ion-icon> Home</a>
-        <a href="Services.html"><ion-icon class="navbar-icon" size="small" name="laptop-outline"></ion-icon> Services</a>
-        <a href="project.html"><ion-icon class="navbar-icon" size="small" name="send"></ion-icon> Systems</a>
-        <a href="skills.html"><ion-icon class="navbar-icon" size="small" name="mail"></ion-icon> About Us</a>
-        <a href="contact.html"><ion-icon class="navbar-icon" size="small" name="phone-portrait-outline"></ion-icon> Contact</a>
-        <i class="fa-solid fa-xmark cancel" onclick="toggleDropdown()"></i>
-        <!-- Mobile Search Bar -->
-        <div class="search-bar">
-          <input type="text" placeholder="Search...." id="search" />
-          <button onclick="performSearch()">Search</button>
+    <div class="hidden md:hidden bg-white shadow-lg" id="mobileDropdown">
+      <div class="container mx-auto px-4 py-3 space-y-4">
+        <a href="#" class="block py-2 px-4 rounded hover:bg-gray-100 transition-colors duration-300">
+          <ion-icon name="home" class="mr-2"></ion-icon> Home
+        </a>
+        <a href="Services.html" class="block py-2 px-4 rounded hover:bg-gray-100 transition-colors duration-300">
+          <ion-icon name="laptop-outline" class="mr-2"></ion-icon> Services
+        </a>
+        <a href="project.html" class="block py-2 px-4 rounded hover:bg-gray-100 transition-colors duration-300">
+          <ion-icon name="send" class="mr-2"></ion-icon> Systems
+        </a>
+        <a href="skills.html" class="block py-2 px-4 rounded hover:bg-gray-100 transition-colors duration-300">
+          <ion-icon name="mail" class="mr-2"></ion-icon> About Us
+        </a>
+        <a href="contact.html" class="block py-2 px-4 rounded hover:bg-gray-100 transition-colors duration-300">
+          <ion-icon name="phone-portrait-outline" class="mr-2"></ion-icon> Contact
+        </a>
+        
+        <div class="relative mt-4">
+          <input type="text" placeholder="Search..." class="w-full py-2 px-4 pr-10 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+          <button class="absolute right-3 top-2 text-gray-500 hover:text-primary">
+            <i class="fas fa-search"></i>
+          </button>
         </div>
       </div>
     </div>
@@ -84,69 +132,100 @@
   <!-- Main Content -->
   <main>
     <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="hero-container">
-        <div class="hero-image" data-aos="zoom-out" data-aos-duration="3000">
-          <img src="media/profile.jpg" alt="Profile Picture" />
-        </div>
-        <div class="hero-content">
-          <h1 data-aos="fade-left" data-aos-duration="1500" data-aos-delay="700">
-            Hey, I'm <span>Bismark</span>
-          </h1>
-          <div class="typewriter" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="900">
-            I'm a <span class="typewriter-text"></span><span class="cursor">|</span>
+    <section class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-10"></div>
+      <div class="container mx-auto px-4 py-20 md:py-32 relative z-10">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right" data-aos-duration="1000">
+            <div class="hero-image relative w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden border-4 border-white shadow-xl">
+              <img src="media/profile.jpg" alt="Profile Picture" class="w-full h-full object-cover">
+            </div>
           </div>
-          <p data-aos="flip-down" data-aos-duration="1500" data-aos-delay="1100">
-            Welcome to Bismark IQ Tech - your hub for innovative tech solutions, tutorials, and services. Empowering individuals and businesses with cutting-edge tools and insights.
-          </p>
-          <div class="social-links" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1300">
-            <a href="https://www.youtube.com/@bismarkIQTech"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://www.facebook.com/BismarkIQTech"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://www.tiktok.com/@bismarkiqtech"><i class="fa-brands fa-tiktok"></i></a>
-            <a href="https://www.instagram.com/bismarkiqtech/"><i class="fa-brands fa-instagram"></i></a>
-          </div>
-          <div class="hero-btn" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="1800">
-            <a href="contact.html"><button>Hire Me</button></a>
+          
+          <div class="md:w-1/2 text-center md:text-left" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+              Hey, I'm <span class="text-primary">Bismark</span>
+            </h1>
+            
+            <div class="typewriter text-2xl md:text-3xl font-orbitron mb-6 h-10">
+              <span class="typewriter-text text-accent"></span><span class="cursor text-primary">|</span>
+            </div>
+            
+            <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-lg mx-auto md:mx-0">
+              Welcome to Bismark IQ Tech - your hub for innovative tech solutions, tutorials, and services. Empowering individuals and businesses with cutting-edge tools and insights.
+            </p>
+            
+            <div class="social-links flex justify-center md:justify-start space-x-6 mb-8" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
+              <a href="https://www.youtube.com/@bismarkIQTech" class="text-2xl text-gray-600 hover:text-red-600 transition-colors duration-300">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+              <a href="https://www.facebook.com/BismarkIQTech" class="text-2xl text-gray-600 hover:text-blue-600 transition-colors duration-300">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a href="https://www.tiktok.com/@bismarkiqtech" class="text-2xl text-gray-600 hover:text-black transition-colors duration-300">
+                <i class="fa-brands fa-tiktok"></i>
+              </a>
+              <a href="https://www.instagram.com/bismarkiqtech/" class="text-2xl text-gray-600 hover:text-pink-600 transition-colors duration-300">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+            
+            <div class="hero-btn" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="700">
+              <a href="contact.html" class="inline-block bg-gradient-to-r from-primary to-secondary text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                Hire Me
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- What We Offer Section -->
-    <section class="offer-section" data-aos="fade-up" data-aos-duration="1500">
-      <div class="container">
-        <h2>Our Offerings &amp; Services</h2>
-        <p>
+    <section class="py-16 bg-gradient-to-b from-white to-gray-50" data-aos="fade-up" data-aos-duration="1000">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Offerings &amp; Services</h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
           Bismark IQ Tech delivers tech content creation, software development, web design, and graphic design alongside innovative tech solutions.
         </p>
-        <a href="Services.html" class="btn-primary">Learn More</a>
+        <a href="Services.html" class="inline-block bg-primary text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-primary-dark transition-colors duration-300">
+          Learn More
+        </a>
       </div>
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="why-choose-us" data-aos="fade-up" data-aos-duration="1500">
-      <div class="container">
-        <h2>Our Products</h2>
-        <div class="choose-grid">
-          <a href="project.html" class="choose-item">
-            <img src="media/responsive-web-design.webp" alt="Expertise" />
-            <div class="choose-text">
-              <h3>Expertise</h3>
-              <p>Our team of experts are highly skilled and experienced in the IT industry.</p>
+    <section class="py-16 bg-white" data-aos="fade-up" data-aos-duration="1000">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Products</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <a href="project.html" class="choose-item group overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+            <div class="h-48 overflow-hidden">
+              <img src="media/responsive-web-design.webp" alt="Expertise" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 text-gray-800 group-hover:text-primary transition-colors duration-300">Expertise</h3>
+              <p class="text-gray-600">Our team of experts are highly skilled and experienced in the IT industry.</p>
             </div>
           </a>
-          <a href="project.html" class="choose-item">
-            <img src="media/Article_e-com_sep-1.jpg" alt="Client-Centric" />
-            <div class="choose-text">
-              <h3>Client-Centric Approach</h3>
-              <p>Tailored services to meet your unique business needs.</p>
+          
+          <a href="project.html" class="choose-item group overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            <div class="h-48 overflow-hidden">
+              <img src="media/Article_e-com_sep-1.jpg" alt="Client-Centric" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 text-gray-800 group-hover:text-primary transition-colors duration-300">Client-Centric Approach</h3>
+              <p class="text-gray-600">Tailored services to meet your unique business needs.</p>
             </div>
           </a>
-          <a href="project.html" class="choose-item">
-            <img src="media/Mobile-App-Design.jpg" alt="Reliability" />
-            <div class="choose-text">
-              <h3>Reliability &amp; Communication</h3>
-              <p>Reliable support and transparent communication for a seamless partnership.</p>
+          
+          <a href="project.html" class="choose-item group overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+            <div class="h-48 overflow-hidden">
+              <img src="media/Mobile-App-Design.jpg" alt="Reliability" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2 text-gray-800 group-hover:text-primary transition-colors duration-300">Reliability &amp; Communication</h3>
+              <p class="text-gray-600">Reliable support and transparent communication for a seamless partnership.</p>
             </div>
           </a>
         </div>
@@ -154,60 +233,115 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials" data-aos="fade-up" data-aos-duration="1500">
-      <div class="container">
-        <h2>Testimonials</h2>
-        <div class="testimonial-slider">
-          <div class="testimonial-card">
-            <p class="client-name">Kwasi Adu</p>
-            <p class="testimonial-text">
+    <section class="py-16 bg-gray-50" data-aos="fade-up" data-aos-duration="1000">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Testimonials</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="testimonial-card bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 rounded-full bg-primary-light flex items-center justify-center text-primary-dark font-bold mr-4">
+                KA
+              </div>
+              <h3 class="client-name text-lg font-bold">Kwasi Adu</h3>
+            </div>
+            <p class="testimonial-text text-gray-600 italic">
               "I'm a testimonial. Add text that says something nice about you and your services. Let your customers tell their friends how great you are."
             </p>
+            <div class="mt-4 text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
           </div>
-          <div class="testimonial-card">
-            <p class="client-name">Miracle</p>
-            <p class="testimonial-text">
+          
+          <div class="testimonial-card bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 rounded-full bg-secondary-light flex items-center justify-center text-secondary-dark font-bold mr-4">
+                M
+              </div>
+              <h3 class="client-name text-lg font-bold">Miracle</h3>
+            </div>
+            <p class="testimonial-text text-gray-600 italic">
               "I'm a testimonial. Add text that says something nice about you and your services. Let your customers tell their friends how great you are."
             </p>
+            <div class="mt-4 text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
           </div>
-          <div class="testimonial-card">
-            <p class="client-name">Bismark</p>
-            <p class="testimonial-text">
+          
+          <div class="testimonial-card bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 rounded-full bg-accent-light flex items-center justify-center text-accent-dark font-bold mr-4">
+                B
+              </div>
+              <h3 class="client-name text-lg font-bold">Bismark</h3>
+            </div>
+            <p class="testimonial-text text-gray-600 italic">
               "I'm a testimonial. Add text that says something nice about you and your services. Let your customers tell their friends how great you are."
             </p>
+            <div class="mt-4 text-yellow-400">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" title="Back to Top">&#8679;</button>
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-primary-dark">
+      <i class="fas fa-arrow-up"></i>
+    </button>
   </main>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-about">
-        <h3>Bismarck IQ Tech</h3>
-        <p>Your go-to problem solver, developer, and tech content creator.</p>
+  <footer class="bg-gray-900 text-white pt-16 pb-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div class="footer-about">
+          <h3 class="text-2xl font-bold mb-4">Bismark IQ Tech</h3>
+          <p class="text-gray-400">Your go-to problem solver, developer, and tech content creator.</p>
+        </div>
+        
+        <div class="footer-links">
+          <h4 class="text-xl font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="project.html" class="text-gray-400 hover:text-white transition-colors duration-300">See My Work</a></li>
+            <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors duration-300">Contact Me</a></li>
+            <li><a href="Services.html" class="text-gray-400 hover:text-white transition-colors duration-300">Services</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-social">
+          <h4 class="text-xl font-semibold mb-4">Connect with Me</h4>
+          <div class="flex space-x-4 mb-4">
+            <a href="https://www.facebook.com/BismarkIQTech" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">
+              <i class="fab fa-facebook-f text-xl"></i>
+            </a>
+            <a href="https://www.instagram.com/bismarkiqtech/" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">
+              <i class="fab fa-instagram text-xl"></i>
+            </a>
+            <a href="https://www.youtube.com/@bismarkIQTech" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">
+              <i class="fab fa-youtube text-xl"></i>
+            </a>
+          </div>
+          <p class="text-gray-400">Email: contact@bismarkiq.online</p>
+        </div>
       </div>
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="project.html">See My Work</a></li>
-          <li><a href="contact.html">Contact Me</a></li>
-          <li><a href="Services.html">Services</a></li>
-        </ul>
+      
+      <div class="footer-bottom border-t border-gray-800 pt-6 text-center text-gray-500">
+        <p>&copy; 2024 Bismark IQ Tech. All Rights Reserved.</p>
       </div>
-      <div class="footer-social">
-        <h4>Connect with Me</h4>
-        <a href="https://www.facebook.com/BismarkIQTech" target="_blank">Facebook</a> |
-        <a href="https://www.twitter.com" target="_blank">Instagram</a> |
-        <a href="https://www.youtube.com/@bismarkIQTech" target="_blank">YouTube</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 Bismarck IQ Tech. All Rights Reserved.</p>
     </div>
   </footer>
 
@@ -215,23 +349,31 @@
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     // Initialize AOS
-    AOS.init({ offset: 0 });
+    AOS.init({ 
+      offset: 100,
+      duration: 800,
+      easing: 'ease-in-out',
+      once: false
+    });
 
     // Toggle Mobile Dropdown Menu
     function toggleDropdown() {
       const dropdown = document.getElementById('mobileDropdown');
-      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+      dropdown.classList.toggle('hidden');
     }
 
     // Back-to-Top Button
     const backToTop = document.getElementById('back-to-top');
-    window.onscroll = function () {
-      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        backToTop.style.display = "block";
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTop.classList.remove('opacity-0', 'invisible');
+        backToTop.classList.add('opacity-100', 'visible');
       } else {
-        backToTop.style.display = "none";
+        backToTop.classList.remove('opacity-100', 'visible');
+        backToTop.classList.add('opacity-0', 'invisible');
       }
-    };
+    });
+    
     backToTop.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
@@ -241,9 +383,11 @@
     const textArray = ["Developer", "Designer", "Tech Enthusiast", "Innovator"];
     let textIndex = 0, charIndex = 0;
     let isDeleting = false;
+    
     function type() {
       if (textIndex >= textArray.length) textIndex = 0;
       const currentText = textArray[textIndex];
+      
       if (!isDeleting) {
         typewriterText.textContent = currentText.substring(0, charIndex + 1);
         charIndex++;
@@ -262,8 +406,9 @@
       }
       setTimeout(type, isDeleting ? 50 : 150);
     }
-    type();
+    
+    // Start the typewriter effect
+    setTimeout(type, 1000);
   </script>
-  <script src="index.js"></script>
 </body>
 </html>
